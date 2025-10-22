@@ -1,11 +1,16 @@
 import React from "react";
 
 function DataMahasiswa({ nomor, nim, nama, semester, jurusan }) {
+  // Ganti <li>...</li> menjadi <tr>...</tr>
   return (
-    <li>
-      <h3>{nomor}. {nama} ({nim})</h3>
-      <p>Jurusan {jurusan} - Semester {semester}</p>
-    </li>
+    <tr>
+      {/* Buat 5 sel data (<td>) sesuai urutan header */}
+      <td>{nomor}</td>
+      <td>{nim}</td>
+      <td>{nama}</td>
+      <td>{jurusan}</td>
+      <td>{semester}</td>
+    </tr>
   );
 }
 

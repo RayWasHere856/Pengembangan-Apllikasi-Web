@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/* 2. Terapkan reset margin/padding dan box-sizing (Best Practice) */
+/* Ini akan menerapkan margin: 0 dan padding: 0 ke SEMUA elemen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ini membantu agar padding tidak merusak layout */
+}
+
+/* 3. Terapkan font Poppins ke seluruh aplikasi */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400; /* Anda bisa atur ketebalan default di sini */
+  
+  /* Tambahan: untuk anti-aliasing agar font terlihat lebih halus */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Opsional: pastikan elemen lain juga mewarisi font */
+h1, h2, h3, h4, h5, h6, button, input, textarea, select {
+  font-family: inherit; /* 'inherit' berarti "ikut font dari parent (body)" */
+}

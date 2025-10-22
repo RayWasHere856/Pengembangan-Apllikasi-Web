@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
+// Path ini benar karena file-file ini ada di folder 'pages' yang sama
 import TambahMurid from "./TambahMurid.jsx";
 import DataMahasiswa from "./DataMahasiswa.jsx";
+
+// Path import CSS Anda yang sudah dikoreksi
+import '../style/TambahMurid.css';
 
 function HomePage() {
   const [daftarMahasiswa, setDaftarMahasiswa] = useState([
@@ -18,13 +22,37 @@ function HomePage() {
   };
 
   return (
-    <div>
-      <h2>Tambah Mahasiswa Baru</h2>
+    // Terapkan container layout di sini
+    <div className="home-page-container">
       <TambahMurid onTambahMahasiswa={tambahMahasiswaBaru} />
+
       <h2>Daftar Mahasiswa</h2>
-      <ul>{daftarMahasiswa.map((mhs, index) => (
-        <DataMahasiswa key={mhs.nim} nomor={index + 1} nim={mhs.nim} nama={mhs.nama} semester={mhs.semester} jurusan={mhs.jurusan} />
-      ))}</ul>
+
+      <div className="mahasiswa-list-card">
+        <table className="mahasiswa-table">
+          <thead>
+            <tr>
+              <th>Nomor</th>
+              <th>NIM</th>
+              <th>Nama</th>
+              <th>Jurusan</th>
+              <th>Semester</th>
+            </tr>
+          </thead>
+          <tbody>
+            {daftarMahasiswa.map((mhs, index) => (
+              <DataMahasiswa 
+                key={mhs.nim} 
+                nomor={index + 1} 
+                nim={mhs.nim} 
+                nama={mhs.nama} 
+                semester={mhs.semester} 
+                jurusan={mhs.jurusan} 
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

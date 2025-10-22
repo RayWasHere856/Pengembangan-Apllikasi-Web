@@ -1,0 +1,39 @@
+/* Card container untuk daftar */
+.mahasiswa-list-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px; /* Sudut melengkung */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden; /* Penting agar table di dalamnya ikut melengkung */
+}
+
+/* Tabel di dalam card */
+.mahasiswa-table {
+  width: 100%;
+  border-collapse: collapse; /* Menyatukan border antar sel */
+}
+
+/* Header Tabel (Nomor, NIM, Nama, dll) */
+.mahasiswa-table th {
+  background-color: #f9f9f9;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 500; /* Sedikit tebal */
+  border-bottom: 2px solid #ddd;
+}
+
+/* Data Tabel (isi) */
+.mahasiswa-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0; /* Garis pemisah antar baris */
+}
+
+/* Menghilangkan border di baris paling bawah */
+.mahasiswa-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Efek hover agar lebih interaktif */
+.mahasiswa-table tbody tr:hover {
+  background-color: #f5f5f5;
+}

@@ -1,0 +1,17 @@
+/*
+ * CSS untuk Header
+ */
+.header-container {
+  /* Ini adalah kuncinya: 
+    Beri margin kiri seukuran lebar sidebar (220px) 
+    agar tidak tertimpa.
+  */
+  margin-left: 520px;
+  
+  /* (Sesuai permintaan Anda) Membuat teks di tengah */
+  text-align: center;
+  
+  /* (Opsional) Supaya lebih rapi, beri sedikit padding */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

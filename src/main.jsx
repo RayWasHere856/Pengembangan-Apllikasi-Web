@@ -2,8 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
+
 //Mengimpor komponen yang sudah di buat
-import Navigation from './components/pages/Navigation.jsx';
+import Header from './components/pages/Header.jsx';
+import Navigation from './components/pages/Sidebar.jsx';
 import RouterPage from './components/RouterPage.jsx';
 
 
@@ -12,6 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
     <div>
       {/* Navigation berguna untuk memanggil komponen yang berada dihalaman Navigation agar tetap muncul di halaman lain */}
+      <Header />
       <Navigation/>
       <hr />
       <main>
