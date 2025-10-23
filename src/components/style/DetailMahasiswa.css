@@ -1,0 +1,56 @@
+.detail-page-container {
+  max-width: 900px; /* Lebar maksimum tampilan */
+  margin: 0 auto; /* Menengahkan konten di halaman */
+}
+
+.detail-card {
+  margin-top: 30px; /* Jarak atas kartu */
+  margin-bottom: 30px; /* Jarak bawah kartu */
+  background: #ffffff; /* Warna latar kartu */
+  border: 1px solid #e0e0e0; /* Garis tepi halus */
+  border-radius: 8px; /* Sudut melengkung */
+  overflow: hidden; /* Menyembunyikan elemen keluar batas */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; /* Efek bayangan */
+}
+
+.detail-card .card-header {
+  text-align: center; /* Judul di tengah */
+  background-color: #4668da; /* Warna latar biru */
+  border-bottom: 1px solid #e0e0e0; /* Garis bawah header */
+  padding: 15px 20px; /* Ruang dalam header */
+  color: #ffffff; /* Warna teks putih */
+}
+
+.detail-card .card-header h3 {
+  margin: 0; /* Hilangkan jarak default */
+  font-size: 18px; /* Ukuran teks judul */
+  font-weight: bolder; /* Tebal huruf */
+}
+
+.detail-card .card-body {
+  padding: 20px; /* Ruang dalam isi kartu */
+}
+
+.detail-card .card-body p {
+  font-size: 16px; /* Ukuran teks isi */
+  line-height: 1.6; /* Jarak antar baris teks */
+  margin-bottom: 10px; /* Jarak antar paragraf */
+}
+
+.detail-card .card-body button {
+  width: 100%; /* Tombol selebar isi kartu */
+  padding: 12px; /* Ruang dalam tombol */
+  background-color: #007bff; /* Warna tombol biru */
+  color: white; /* Warna teks putih */
+  border: none; /* Hilangkan garis tepi */
+  border-radius: 4px; /* Sudut tombol melengkung */
+  cursor: pointer; /* Ubah kursor jadi tangan saat diarahkan */
+  font-size: 16px; /* Ukuran teks tombol */
+  font-weight: 500; /* Ketebalan teks sedang */
+  transition: background-color 0.2s; /* Efek perubahan warna halus */
+  text-decoration: none; /* Hilangkan garis bawah teks */
+}
+
+.detail-card .card-body button:hover {
+  background-color: #0056b3; /* Warna tombol saat di-hover */
+}

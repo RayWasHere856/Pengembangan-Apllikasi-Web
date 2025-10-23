@@ -1,34 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react"; // <-- Hapus useEffect
 import TambahMurid from "./TambahMahasiswa.jsx";
 import DataMahasiswa from "./DataMahasiswa.jsx";
 import '../style/TambahMahasiswa.css';
 
-function HomePage() {
-  // State utama untuk menyimpan daftar mahasiswa
-  const [daftarMahasiswa, setDaftarMahasiswa] = useState([
-    { nim: 241130408, nama: "Rayhan Alamsyah", semester: 3, jurusan: "Teknologi Informasi" },
-    { nim: 241131035, nama: "Rava Abde Kemala Dewa", semester: 5, jurusan: "Teknik Informatika" },
-    { nim: 241131047, nama: "Doni Tambunan", semester: 1, jurusan: "Sistem Informasi" }
-  ]);
+// Terima props 'daftarMahasiswa' dan 'onTambahMahasiswa' dari RouterPage
+function HomePage({ daftarMahasiswa, onTambahMahasiswa }) { 
+  
+  // State daftarMahasiswa dan fungsi tambahMahasiswaBaru TELAH DIPINDAHKAN
 
-  // State untuk kata pencarian dan kriteria filter (nama atau NIM)
+  // State untuk pencarian tetap di sini
   const [searchQuery, setSearchQuery] = useState("");
   const [filterKriteria, setFilterKriteria] = useState("nama");
 
-  // Useeffect yang menampilkan jumlah total mahasiswa ke konsol setiap kali daftar berubah
-  useEffect(() => {
-    console.log(`Jumlah total mahasiswa sekarang: ${daftarMahasiswa.length}`);
-  }, [daftarMahasiswa]);
-
-  // Fungsi untuk menambahkan data mahasiswa baru
-  const tambahMahasiswaBaru = (dataMahasiswaBaru) => {
-    const terdaftar = daftarMahasiswa.find((mhs) => mhs.nim === dataMahasiswaBaru.nim);
-    if (terdaftar) alert("Mahasiswa dengan NIM tersebut sudah terdaftar.\nSilakan masukkan NIM lain.");
-    else {
-      setDaftarMahasiswa([...daftarMahasiswa, dataMahasiswaBaru]);
-      alert("Data mahasiswa berhasil ditambahkan!");
-    }
-  };
+  // useEffect TELAH DIPINDAHKAN
 
   // Filter daftar mahasiswa berdasarkan kriteria pencarian
   const filteredMahasiswa = daftarMahasiswa.filter(mhs => {
@@ -40,10 +24,9 @@ function HomePage() {
 
   return (
     <div className="home-page-container">
-      {/* Komponen untuk menambah data mahasiswa baru */}
-      <TambahMurid onTambahMahasiswa={tambahMahasiswaBaru} />
+      {/* Kirim prop onTambahMahasiswa yang diterima dari RouterPage */}
+      <TambahMurid onTambahMahasiswa={onTambahMahasiswa} />
 
-      {/* Judul daftar mahasiswa */}
       <h2>Daftar Mahasiswa</h2>
 
       {/* Bagian pencarian dan filter data */}
@@ -75,6 +58,7 @@ function HomePage() {
               <th>Nama</th>
               <th>Jurusan</th>
               <th>Semester</th>
+              <th>Aksi</th> {/* Header Aksi tetap ada */}
             </tr>
           </thead>
           <tbody>
@@ -82,15 +66,15 @@ function HomePage() {
               <DataMahasiswa
                 key={mhs.nim}
                 nomor={index + 1}
-                nim={mhs.nim}
-                nama={mhs.nama}
-                semester={mhs.semester}
-                jurusan={mhs.jurusan}
+                mahasiswa={mhs} // Kita tetap kirim seluruh objek mhs
+                // Kita tidak perlu onLihatDetail lagi
               />
             ))}
           </tbody>
         </table>
       </div>
+      
+      {/* Card detail yang sebelumnya ada di sini TELAH DIHAPUS */}
     </div>
   );
 }

@@ -1,20 +1,25 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
-// Komponen DataMahasiswa menampilkan satu baris data mahasiswa dalam tabel
-function DataMahasiswa({ nomor, nim, nama, semester, jurusan }) {
+function DataMahasiswa({ nomor, mahasiswa }) {
+  // Menyusun data mahasiswa agar lebih ringkas
+  const { nim, nama, semester, jurusan } = mahasiswa;
+ //mengembalikan nilai sesuai yang diminta
   return (
-    // Setiap data mahasiswa ditampilkan dalam satu baris tabel
     <tr>
-      {/* Nomor data mahasiswa */}
       <td>{nomor}</td>
-      {/* NIM mahasiswa */}
       <td>{nim}</td>
-      {/* Nama mahasiswa */}
       <td>{nama}</td>
-      {/* Jurusan mahasiswa */}
       <td>{jurusan}</td>
-      {/* Semester mahasiswa */}
       <td>{semester}</td>
+
+      {/* Kolom aksi berisi tautan menuju halaman detail mahasiswa */}
+      <td>
+      <Link to={`/mahasiswa/${nim}`} style={{ padding: '5px 10px', fontSize: '12px', textDecoration: 'none', backgroundColor: '#007bff', color: 'white', borderRadius: '4px' }}>
+      Lihat Detail
+      </Link>
+
+      </td>
     </tr>
   );
 }

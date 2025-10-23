@@ -36,7 +36,7 @@ function TambahMurid({ onTambahMahasiswa }) {
         {/* Formulir untuk memasukkan data mahasiswa */}
         <form onSubmit={handleSubmit}>
           <label>Masukan NIM</label>
-          <input type="text" placeholder="NIM" value={nim} onChange={(e) => setNim(e.target.value)} /><br />
+          <input type="number" placeholder="NIM" value={nim} onChange={(e) => setNim(e.target.value)} /><br />
 
           <label>Masukan Nama</label>
           <input type="text" placeholder="Nama Mahasiswa" value={nama} onChange={(e) => setNama(e.target.value)} /><br />
