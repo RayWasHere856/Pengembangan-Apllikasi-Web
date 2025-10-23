@@ -1,17 +1,7 @@
-/*
- * CSS untuk Header
- */
+/* Bagian utama untuk mengatur tampilan header aplikasi */
 .header-container {
-  /* Ini adalah kuncinya: 
-    Beri margin kiri seukuran lebar sidebar (220px) 
-    agar tidak tertimpa.
-  */
-  margin-left: 520px;
-  
-  /* (Sesuai permintaan Anda) Membuat teks di tengah */
-  text-align: center;
-  
-  /* (Opsional) Supaya lebih rapi, beri sedikit padding */
-  padding-top: 20px;
-  padding-bottom: 20px;
+  margin-left: 520px; /* Memberi jarak dari sisi kiri agar tidak menimpa sidebar */
+  text-align: center; /* Mengatur posisi teks agar berada di tengah */
+  padding-top: 20px;  /* Memberi jarak atas agar tampak lebih seimbang */
+  padding-bottom: 20px; /* Memberi jarak bawah agar tampilan lebih proporsional */
 }

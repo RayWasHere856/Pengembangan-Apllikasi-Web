@@ -1,62 +1,97 @@
-/* Container utama sidebar */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/* Reset dasar untuk seluruh elemen */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar utama aplikasi */
 .sidebar {
   margin: 0;
   padding: 0;
-  width: 250px; /* Tentukan lebar sidebar */
-  background-color: #f1f1f1; /* Warna latar belakang */
-  position: fixed; /* Tetap di tempat saat di-scroll */
-  height: 100%; /* Tinggi penuh */
-  overflow: auto; /* Scroll jika konten terlalu panjang */
+  width: 250px; /* Lebar area sidebar */
+  background-color: #4668da; /* Warna latar belakang sidebar */
+  position: fixed; /* Tetap di sisi kiri saat halaman di-scroll */
+  height: 100%; /* Menutupi seluruh tinggi layar */
+  overflow: auto; /* Menampilkan scrollbar jika isi terlalu panjang */
   border-right: 1px solid #ddd;
   top: 0;
+  z-index: 200; /* Menempatkan sidebar di atas elemen lain */
 }
 
-.h2-sidebar{
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-/* Daftar navigasi */
-.sidebar-list {
-  list-style-type: none; /* Hilangkan bullets */
-  margin: 0;
-  padding: 20px 0; /* Beri padding atas/bawah */
+/* Bagian header dalam sidebar (judul sidebar) */
+.sidebar-header {
+  min-height: 85px; /* Menyesuaikan tinggi dengan header utama */
+  display: flex;
+  align-items: center; /* Menengahkan teks secara vertikal */
+  padding-left: 20px;
+  box-sizing: border-box;
 }
 
-/* Item navigasi */
-.sidebar-item {
-  margin-bottom: 5px; /* Jarak antar item */
-}
-
-/* Link di dalam sidebar */
-.sidebar-link {
-  display: block; /* Buat link mengisi seluruh lebar <li> */
-  color: black;
-  padding: 12px 20px; /* Padding untuk area klik */
-  text-decoration: none; /* Hilangkan underline */
-  font-size: 16px;
-  transition: background-color 0.3s, color 0.3s; /* Animasi hover */
-}
-
-/* Efek saat kursor di atas link */
-.sidebar-link:hover {
-  background-color: #555;
+/* Judul dalam sidebar */
+.h2-sidebar {
+  margin-top: 0;
+  margin-bottom: 0;
   color: white;
 }
 
-/* (PENTING) Class untuk konten utama */
-/* Ini akan mendorong konten Anda ke kanan agar tidak tertutup sidebar */
-.main-content {
-  margin-left: 300px; /* Harus sedikit lebih besar dari lebar sidebar */
-  padding: 20px;
-}
-/* ... (CSS untuk .sidebar, .sidebar-link, dll ada di atas sini) ... */
-
-/*
- * CSS untuk Header
- */
+/* Header utama aplikasi di bagian atas halaman */
 .header-container {
-  margin-left: 220px;
+  position: fixed;
+  top: 0;
+  left: 250px; /* Menyesuaikan posisi agar tidak menimpa sidebar */
+  width: calc(100% - 250px);
+  background-color: #ffffff; /* Agar tidak transparan saat di-scroll */
+  z-index: 100; /* Di bawah sidebar namun di atas konten */
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  min-height: 85px; /* Tinggi disamakan dengan sidebar-header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Menghapus jarak bawaan pada judul header */
+.header-container h1 {
+  margin: 0;
+}
+
+/* Area konten utama di sisi kanan sidebar */
+.main-content {
+  margin-left: 250px; /* Memberi ruang sebesar lebar sidebar */
+  padding: 20px;
+  margin-top: 115px; /* Menyesuaikan posisi agar tidak tertutup header */
+  background-color: #f9f9f9;
+  min-height: calc(100vh - 115px);
+  box-sizing: border-box;
+}
+
+/* Daftar navigasi dalam sidebar */
+.sidebar-list {
+  list-style-type: none; /* Menghapus bullet pada daftar */
+  margin: 0;
+  padding: 20px 0;
+}
+
+/* Setiap item navigasi dalam sidebar */
+.sidebar-item {
+  margin-bottom: 5px;
+}
+
+/* Tautan navigasi dalam sidebar */
+.sidebar-link {
+  display: block; /* Membuat area klik penuh */
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s; /* Efek halus saat hover */
+}
+
+/* Efek saat kursor diarahkan ke tautan */
+.sidebar-link:hover {
+  background-color: rgb(2, 2, 105);
+  color: white;
 }

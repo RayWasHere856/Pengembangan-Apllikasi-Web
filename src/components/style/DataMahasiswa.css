@@ -1,39 +1,39 @@
-/* Card container untuk daftar */
+/* Kartu utama untuk menampilkan tabel daftar mahasiswa */
 .mahasiswa-list-card {
   background: #ffffff;
   border: 1px solid #e0e0e0;
-  border-radius: 8px; /* Sudut melengkung */
+  border-radius: 8px; /* Sudut dibuat melengkung agar tampak lebih lembut */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  overflow: hidden; /* Penting agar table di dalamnya ikut melengkung */
+  overflow: hidden; /* Menjaga elemen di dalamnya agar mengikuti bentuk kartu */
 }
 
-/* Tabel di dalam card */
+/* Tabel utama di dalam kartu daftar mahasiswa */
 .mahasiswa-table {
   width: 100%;
-  border-collapse: collapse; /* Menyatukan border antar sel */
+  border-collapse: collapse; /* Menghilangkan jarak antar garis tabel */
 }
 
-/* Header Tabel (Nomor, NIM, Nama, dll) */
+/* Gaya untuk header tabel (Nomor, NIM, Nama, Jurusan, Semester) */
 .mahasiswa-table th {
   background-color: #f9f9f9;
   padding: 12px 15px;
   text-align: left;
-  font-weight: 500; /* Sedikit tebal */
+  font-weight: 500;
   border-bottom: 2px solid #ddd;
 }
 
-/* Data Tabel (isi) */
+/* Gaya untuk isi tabel pada setiap baris data mahasiswa */
 .mahasiswa-table td {
   padding: 12px 15px;
-  border-bottom: 1px solid #e0e0e0; /* Garis pemisah antar baris */
+  border-bottom: 1px solid #e0e0e0;
 }
 
-/* Menghilangkan border di baris paling bawah */
+/* Menghapus garis bawah pada baris terakhir tabel */
 .mahasiswa-table tbody tr:last-child td {
   border-bottom: none;
 }
 
-/* Efek hover agar lebih interaktif */
+/* Efek hover agar baris terlihat lebih interaktif saat diarahkan kursor */
 .mahasiswa-table tbody tr:hover {
   background-color: #f5f5f5;
 }
